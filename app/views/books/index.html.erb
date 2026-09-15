@@ -10,10 +10,16 @@
 
 <% @books.each do |book| %>
   <div>
-    <strong><%= book.title %></strong>
+    <strong><%= book.title %></strong><br>
+
+    Author: <%= book.author %><br>
+    Price: <%= book.price %><br>
+    Published: <%= book.published_date %><br>
 
     <%= link_to "Show", book_path(book) %>
     <%= link_to "Edit", edit_book_path(book) %>
     <%= link_to "Delete", delete_book_path(book) %>
   </div>
+
+  <hr>
 <% end %>

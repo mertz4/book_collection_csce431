@@ -17,7 +17,8 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_path, notice: "Book was successfully added."
     else
-      render :new, status: :unprocessable_entity
+      flash.now[:alert] = "Title cannot be blank"
+      render :new, status: :unprocessable_content
     end
   end
 
@@ -31,7 +32,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to books_path, notice: "Book was successfully updated."
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_content
     end
   end
 
@@ -49,6 +50,11 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title)
+  params.require(:book).permit(
+    :title,
+    :author,
+    :price,
+    :published_date)
   end
+
 end
