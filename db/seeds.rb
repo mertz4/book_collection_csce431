@@ -7,7 +7,30 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Book.create(title: "The Hobbit")
-Book.create(title: "1984")
-Book.create(title: "Dune")
-Book.create(title: "The Great Gatsby")
+Book.create!(
+  title: "Dune",
+  author: "Frank Herbert",
+  price: 19.99,
+  published_date: Date.new(1965, 8, 1)
+)
+
+Book.create!(
+  title: "1984",
+  author: "George Orwell",
+  price: 12.50,
+  published_date: Date.new(1949, 6, 8)
+)
+
+Book.create!(
+  title: "The Hobbit",
+  author: "J.R.R. Tolkien",
+  price: 14.99,
+  published_date: Date.new(1937, 9, 21)
+)
+
+Book.create!(
+  title: "The Great Gatsby",
+  author: "F. Scott Fitzgerald",
+  price: 10.99,
+  published_date: Date.new(1925, 4, 10)
+)
