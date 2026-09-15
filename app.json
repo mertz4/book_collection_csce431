@@ -1,0 +1,9 @@
+{
+  "name": "Book Collection",
+  "addons": [
+    "heroku-postgresql:essential-0"
+  ],
+  "scripts": {
+    "postdeploy": "bin/rails db:prepare"
+  }
+}
