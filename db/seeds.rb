@@ -34,3 +34,10 @@ Book.create!(
   price: 10.99,
   published_date: Date.new(1925, 4, 10)
 )
+
+Book.create!(
+  title: "Percy Jackson & the Olympians: The Lightning Thief",
+  author: "Rick Riordan",
+  price: 10.99,
+  published_date: Date.new(2005, 6, 1)
+)
